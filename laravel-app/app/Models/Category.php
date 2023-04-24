@@ -13,14 +13,17 @@ class Category extends Model
     protected $table = 'categories';
     protected $fillable = ['nom'];
 
-    public function produits()
-    {
-        return $this->hasMany(Produit::class, 'category_id');
-    }
+
 
     public function sous_categories()
     {
-        return $this->hasMany(SubCategory::class, 'category_id');
+        return $this->hasMany(SubCategory::class);
     }
+
+    public function produits()
+    {
+        return $this->hasManyThrough(\App\Models\Produit::class , SubCategory::class ,'category_id','sous_category_id');
+    }
+
 
 }

@@ -33,16 +33,16 @@
                         <div class="invalid-feedback">
                             champs obligatoire!
                         </div>
-                    </div>                    
+                    </div>
                     <div class="col-10 col-md-5 m-2">
                         <label for="validationCustom03" class="form-label">prix</label>
-                        <input type="number" class="form-control w-100" id="validationCustom03" name="prix_produit" placeholder="quantite">
+                        <input type="number" class="form-control w-100" id="validationCustom03" name="prix_produit" placeholder="prix">
 
                     </div>
                     <div class="col-10 col-md-5 m-2">
                         <label for="validationCustom04" class="form-label">quantite</label>
                         <input type="text" class="form-control" id="validationCustom04" name="quantite_produit" placeholder="quantite_produit">
-                        
+
 
                     </div>
                     <div class="col-10 col-md-5 m-2">
@@ -52,7 +52,7 @@
                         </div>
 
                     </div>
-                    
+
                     <div class="col-10 col-md-5 m-2">
                         <label for="validationCustom02" class="form-label">category</label>
                         <select class="form-control" id="category" value="" name="categorie_nom">
@@ -60,13 +60,13 @@
                                 @foreach($categories as $category)
                                     <option value="{{$category['id']}}">{{$category['nom']}}</option>
 
-                                @endforeach 
+                                @endforeach
                         </select>
                     </div>
-                    
+
                     <div class="col-10 col-md-5 m-2">
                         <label for="validationCustom02" class="form-label">sous category</label>
-                        <select class="form-control" id="sous_category" value="" name="sous_categorie_nom" disabled>
+                        <select class="form-control" id="sous_category" value="select-form" name="select" disabled>
 
                         </select>
                     </div>
@@ -90,4 +90,4 @@
     </div>
 </div>
 <!-- /.container-fluid -->
-@endsection 
+@endsection

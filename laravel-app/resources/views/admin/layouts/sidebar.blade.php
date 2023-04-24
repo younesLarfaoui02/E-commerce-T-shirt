@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -68,17 +68,50 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{route('produits.index')}}">All Produits</a>
                 <a class="collapse-item" href="{{route('produits.create')}}">Add Produit</a>
+
             </div>
         </div>
     </li>
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
-            aria-expanded="true" aria-controls="collapseFour">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsefour"
+           aria-expanded="true" aria-controls="collapseThree">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Colors</span>
+        </a>
+        <div id="collapsefour" class="collapse" aria-labelledby="collapsefour" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{route('colors.index')}}">All Colors</a>
+                <a class="collapse-item" href="{{route('colors.create')}}">Add Color</a>
+                <a class="collapse-item" href="{{route('colors.create')}}">Add Color to Product</a>
+
+            </div>
+        </div>
+    </li>
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsefive"
+           aria-expanded="true" aria-controls="collapsefive">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Sizes</span>
+        </a>
+        <div id="collapsefive" class="collapse" aria-labelledby="collapsefive" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{route('sizes.index')}}">All Sizes</a>
+                <a class="collapse-item" href="{{route('sizes.create')}}">Add Size</a>
+                <a class="collapse-item" href="{{route('sizes.create')}}">Add Size To Product</a>
+
+            </div>
+        </div>
+    </li>
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsesix"
+            aria-expanded="true" aria-controls="collapsesix">
             <i class="fas fa-fw fa-cog"></i>
             <span>Utilisateurs</span>
         </a>
-        <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapsesix" class="collapse" aria-labelledby="collapsesix" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{route('produits.index')}}">All Produits</a>
                 <a class="collapse-item" href="{{route('produits.create')}}">Add Produit</a>
@@ -96,6 +129,20 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="{{route('produits.index')}}">All Produits</a>
                     <a class="collapse-item" href="{{route('produits.create')}}">Add Produit</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#headingSection"
+                aria-expanded="true" aria-controls="SubCategories">
+                <i class="fas fa-fw fa-cog"></i>
+            <span>Sections</span>
+            </a>
+            <div id="headingSection" class="collapse" aria-labelledby="headingSection" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                 <a class="collapse-item" href="{{route('sections.index')}}">All Section</a>
+                    <a class="collapse-item" href="{{route('sections.create')}}">Add Section</a>
+                    <a class="collapse-item" href="{{route('sections.add_product_to_section')}}">Add Product to Section</a>
                 </div>
             </div>
         </li>
@@ -145,7 +192,7 @@
     <li class="nav-item">
         <a class="nav-link" href="tables.html">
             <i class="fas fa-fw fa-table"></i>
-            <span>Email Notification : send Email to users when they register, place order or when 
+            <span>Email Notification : send Email to users when they register, place order or when
                 their order status change ....</span></a>
     </li>
     <li class="nav-item">
@@ -174,7 +221,7 @@
 
     <!-- Sidebar Message -->
     <div class="sidebar-card d-none d-lg-flex">
-        <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
+        <img class="sidebar-card-illustration mb-2" src="{{asset('admin/assets/img/undraw_rocket.svg')}}" alt="...">
         <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
         <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
     </div>

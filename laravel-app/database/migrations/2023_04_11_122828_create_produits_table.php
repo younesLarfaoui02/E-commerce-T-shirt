@@ -18,9 +18,6 @@ return new class extends Migration
             $table->decimal('prix_produit', 10, 2);
             $table->integer('quantite_produit');
             $table->string('image_produit');
-            // $table->foreignId('categorie_id')->constrained('categories')->onDelete('cascade'); // new syntax >php7
-            // $table->unsignedBigInteger('categorie_id');
-            // $table->foreign('categorie_id')->references('id')->on('categories'); // old syntax <php7
             $table->timestamps();
         });
     }
@@ -31,5 +28,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('produits');
+
+
     }
 };

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="">
 
     <title>SB Admin 2 - Dashboard</title>
@@ -19,7 +20,6 @@
 
     <!-- Custom styles for this template-->
     <link href="{{asset('admin/assets/css/sb-admin-2.min.css')}}" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
@@ -36,12 +36,12 @@
 
             <!-- Main Content -->
             <div id="content">
-                How many people are visiting your website?
-                Which products are most popular?
-                How long are people spending on your website?
-                What is the conversion rate for your website (i.e. how many people are making purchases)?
-                Which marketing campaigns are most effective?
-                <h1> Google Analytics </h1>
+{{--                How many people are visiting your website?--}}
+{{--                Which products are most popular?--}}
+{{--                How long are people spending on your website?--}}
+{{--                What is the conversion rate for your website (i.e. how many people are making purchases)?--}}
+{{--                Which marketing campaigns are most effective?--}}
+{{--                <h1> Google Analytics </h1>--}}
                 @include('admin.layouts.header')
 
                 @yield('content')
@@ -97,12 +97,7 @@
     <!-- Custom scripts for all pages-->
     <script src="{{asset('admin/assets/js/sb-admin-2.min.js')}}"></script>
 
-    <!-- Page level plugins -->
-    <script src="{{asset('admin/assets/vendor/chart.js/Chart.min.js')}}"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="{{asset('admin/assets/js/demo/chart-area-demo.js')}}"></script>
-    <script src="{{asset('admin/assets/js/demo/chart-pie-demo.js')}}"></script>
     <script src="{{asset('admin/assets/js/customJs.js')}}"></script>
 </body>
 

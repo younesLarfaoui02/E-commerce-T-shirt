@@ -50,7 +50,7 @@
                                 </td>
                                 <td>{{$produit['quantite_produit']}}</td>
                                 <td>{{$produit['prix_produit']}}</td>
-                                <td>{{$produit->category->nom}}</td>
+                                <td>{{$produit->sous_category->nom}}</td>
                                 <td>
 
                                 </td>
@@ -64,4 +64,4 @@
 
 </div>
 <!-- /.container-fluid -->
-@endsection 
+@endsection

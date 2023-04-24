@@ -14,8 +14,8 @@ class ProduitController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {   
-        $produits = Produit::with('category')->get();
+    {
+        $produits = Produit::with('sous_category')->get();
         return view('admin.produits.index',compact('produits'));
     }
 
@@ -26,7 +26,7 @@ class ProduitController extends Controller
     {
         $categories = Category::all();
 
-        return view('admin.produits.create',compact('categories'));        
+        return view('admin.produits.create',compact('categories'));
     }
 
     /**
@@ -35,22 +35,21 @@ class ProduitController extends Controller
     public function store(Request $request)
     {
         // Validate the request data
+
+
         $validatedData = $request->validate([
             'nom_produit' => 'required|string|max:255',
             'description_produit' => 'required|string',
             'prix_produit' => 'required|numeric',
             'quantite_produit' => 'required|integer',
-            'image_produit' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024', // 1MB max size for image
-            'categorie_nom' => 'required|exists:categories,nom',
-            'sous_categorie_nom' => 'required|exists:sous_categories,nom'
+            'image_produit' => 'required|image|mimes:jpeg,png,jpg,gif,svg', // 1MB max size for image
+            'select' => 'required',
         ]);
-        $imageName = time().'.'.$request->image_produit->extension();  
-       
+        $imageName = time().'.'.$request->image_produit->extension();
 
-        $request->image_produit->move(public_path('admin/images'), $imageName);
+        $request->image_produit->move(public_path('images'), $imageName);
 
-        $category = Category::where('nom', $request->input('categorie_nom'))->first();
-
+        $Subcategory = SubCategory::where('id', $request->select)->first();
         // Create the new product instance
         $product = new Produit();
         $product->nom_produit = $validatedData['nom_produit'];
@@ -58,8 +57,7 @@ class ProduitController extends Controller
         $product->prix_produit = $validatedData['prix_produit'];
         $product->quantite_produit = $validatedData['quantite_produit'];
         $product->image_produit = $imageName;
-        $product->category_id = $category->id;
-        $product->category_id = $category->id;
+        $product->sous_category_id = $Subcategory->id;
         $product->save();
 
         // Redirect to the index page with a success message

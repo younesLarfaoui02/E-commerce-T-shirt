@@ -43,10 +43,10 @@
                         <div class="col-md-12 m-2">
                             <label for="validationCustom01" class="form-label">Category </label>
                             <select
-                                class="form-control  @error('categorie_id')
+                                class="form-control  @error('category_id')
                                 is-invalid
                             @enderror "
-                                value="" name="categorie_id">
+                                value="" name="category_id">
                                 <option value="">Select a category</option>
                                 @foreach ($categories as $category)
                                     <option value="{{ $category['id'] }}"
@@ -61,7 +61,6 @@
                                 @enderror
                             </div>
                         </div>
-
                         <hr>
                         <div class="col-12 m-2">
                             <button class="btn btn-success" name="{{ route('subcategories.store') }}"

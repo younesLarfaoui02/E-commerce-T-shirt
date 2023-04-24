@@ -24,14 +24,12 @@
 
 <body>
     <!-- Modal -->
-        
+
     @include('front.layouts.header')
-    
 
 
-    <div class="container">
+
         @yield('content')
-    </div> 
 
 
 

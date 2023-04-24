@@ -14,13 +14,13 @@
     var header = $(".sticky-bar");
     var win = $(window);
     win.on("scroll", function () {
+        var card = $(".is-has-hard");
         var scroll = win.scrollTop();
-        if (scroll < 200) {
-            header.removeClass("stick");
-            $(".header-style-2 .categories-dropdown-active-large").removeClass("open");
-            $(".header-style-2 .categories-button-active").removeClass("open");
-        } else {
+        if (scroll > 50 && card.length == 0) {
             header.addClass("stick");
+        } else {
+            header.removeClass("stick");
+
         }
     });
 
@@ -477,7 +477,7 @@
     }
 
     /*-----------------------
-        Shop filter active 
+        Shop filter active
     ------------------------- */
     $(".shop-filter-toogle").on("click", function (e) {
         e.preventDefault();
